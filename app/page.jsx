@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -31,19 +30,20 @@ export default function Home() {
                 variant="outline"
                 className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400"
               >
-                🩺 Healthcare made Simple
+                Healthcare made Simple
               </Badge>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-2xl">
-                Connect with doctors 👨‍⚕️ <br />
+                Connect with doctors
+                <br />
                 <span className="gradient-title">
-                  anytime, anywhere 
+                  anytime, anywhere
                 </span>
               </h1>
 
               <p className="text-muted-foreground text-lg md:text-xl max-w-md">
-                📅 Book appointments, 💻 consult via video, and manage your
-                healthcare journey ❤️ all in one secure platform.
+                Book appointments, consult via video, and manage your
+                healthcare journey — all in one secure platform.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -54,7 +54,7 @@ export default function Home() {
                   className="bg-emerald-600 text-white hover:bg-emerald-700"
                 >
                   <Link href="/onboarding">
-                    🚀 Get Started
+                    Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -66,7 +66,7 @@ export default function Home() {
                   className="border-emerald-700/30 hover:bg-muted/80"
                 >
                   <Link href="/doctors">
-                    👨‍⚕️ Find Doctors
+                    Find Doctors
                   </Link>
                 </Button>
 
@@ -94,11 +94,11 @@ export default function Home() {
 
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              ⚡ How It Works
+              How It Works
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              ✨ Our platform makes healthcare accessible with just a few clicks
+              Our platform makes healthcare accessible with just a few clicks.
             </p>
           </div>
 
@@ -142,16 +142,15 @@ export default function Home() {
             <Badge
               className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400"
             >
-              💰 Affordable Healthcare
+              Affordable Healthcare
             </Badge>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              📦 Consultation Packages
+              Consultation Packages
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              ✨ Choose the perfect consultation package that fits your healthcare
-              needs.
+              Choose the consultation package that fits your healthcare needs.
             </p>
           </div>
 
@@ -166,7 +165,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
                   <Stethoscope className="h-5 w-5 mr-2 text-emerald-400" />
-                  💳 How Our Credit System Works
+                  How Our Credit System Works
                 </CardTitle>
               </CardHeader>
 
@@ -210,15 +209,15 @@ export default function Home() {
             <Badge
               className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
             >
-              🌟 Success Stories
+              Success Stories
             </Badge>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              💬 What Our Users Say
+              What Our Users Say
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              ❤️ Hear from patients and doctors who use our platform
+              Hear from patients and doctors who use our platform.
             </p>
           </div>
 
@@ -278,13 +277,13 @@ export default function Home() {
               <div>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  🚀 Ready to take control of your healthcare?
+                  Ready to take control of your healthcare?
                 </h2>
 
                 <p className="text-lg text-muted-foreground mb-8">
-                  💚 Join thousands of users who have simplified their healthcare
+                  Join thousands of users who have simplified their healthcare
                   journey with our platform. Get started today and experience
-                  healthcare the way it should be. ✨
+                  healthcare the way it should be.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -295,7 +294,7 @@ export default function Home() {
                     asChild
                   >
                     <Link href="/sign-up">
-                      ✨ Sign Up Now
+                      Sign Up Now
                     </Link>
                   </Button>
 
@@ -306,7 +305,7 @@ export default function Home() {
                     variant="outline"
                   >
                     <Link href="/pricing">
-                      💰 View Pricing
+                      View Pricing
                     </Link>
                   </Button>
 
