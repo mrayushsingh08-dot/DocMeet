@@ -13,6 +13,7 @@ import {
 import { ArrowRight, Stethoscope, Check } from "lucide-react";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 import Pricing from "@/components/pricing";
+import MediSenseSection from "@/components/MediSenseSection";
 
 export default function Home() {
   return (
@@ -199,6 +200,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+          {/* MEDISENSE SECTION */}
+                  <MediSenseSection />
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-20 bg-muted/30">
