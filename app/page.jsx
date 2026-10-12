@@ -14,8 +14,8 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
-import { ArrowRight, Stethoscope, Check } from "lucide-react";
-import { creditBenefits, features, testimonials } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
+import { features, testimonials } from "@/lib/data";
 import Pricing from "@/components/pricing";
 import MediSenseSection from "@/components/MediSenseSection";
 
@@ -25,17 +25,17 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="relative overflow-hidden py-30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             {/* LEFT SIDE */}
             <div className="space-y-8">
               <Badge
                 variant="outline"
-                className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400"
+                className="w-fit rounded-md border-emerald-700/30 bg-emerald-900/30 px-4 py-2 text-sm font-medium text-emerald-400"
               >
                 Healthcare made Simple
               </Badge>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-2xl">
+              <h1 className="max-w-2xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
                 Connect with doctors
                 <br />
                 <span className="gradient-title">
@@ -43,12 +43,12 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-muted-foreground text-lg md:text-xl max-w-md">
+              <p className="max-w-md text-lg text-muted-foreground md:text-xl">
                 Book appointments, consult via video, and manage your
                 healthcare journey — all in one secure platform.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Button
                   asChild
                   size="lg"
@@ -66,15 +66,13 @@ export default function Home() {
                   variant="outline"
                   className="border-emerald-700/30 hover:bg-muted/80"
                 >
-                  <Link href="/doctors">
-                    Find Doctors
-                  </Link>
+                  <Link href="/doctors">Find Doctors</Link>
                 </Button>
               </div>
             </div>
 
             {/* RIGHT SIDE IMAGE */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+            <div className="relative h-[400px] overflow-hidden rounded-xl lg:h-[500px]">
               <Image
                 src="/banner.png"
                 alt="Doctor consultation"
@@ -88,26 +86,26 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="py-20 bg-muted/30">
+      <section className="bg-muted/30 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               How It Works
             </h2>
 
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Our platform makes healthcare accessible with just a few clicks.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
+                className="border-emerald-900/20 transition-all duration-300 hover:border-emerald-800/40"
               >
                 <CardHeader className="pb-2">
-                  <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
+                  <div className="mb-4 w-fit rounded-lg bg-emerald-900/20 p-3">
                     {feature.icon}
                   </div>
 
@@ -130,82 +128,52 @@ export default function Home() {
       {/* PRICING SECTION */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400">
+          <div className="mb-16 text-center">
+            <Badge className="w-fit rounded-md border-emerald-700/30 bg-emerald-900/30 px-4 py-2 text-sm font-medium text-emerald-400">
               Affordable Healthcare
             </Badge>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               Consultation Packages
             </h2>
 
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Choose the consultation package that fits your healthcare needs.
             </p>
           </div>
 
-          <div>
-            {/* PRICING TABLE */}
-            <Pricing />
-
-            {/* CREDIT SYSTEM */}
-            <Card className="mt-12 bg-muted/20 border-emerald-900/30">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-white flex items-center">
-                  <Stethoscope className="h-5 w-5 mr-2 text-emerald-400" />
-                  How Our Credit System Works
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent>
-                <ul className="space-y-3">
-                  {creditBenefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="mr-3 mt-1 bg-emerald-900/20 p-1 rounded-full">
-                        <Check className="h-4 w-4 text-emerald-400" />
-                      </div>
-
-                      <p className="text-muted-foreground">
-                        {typeof benefit === "string"
-                          ? benefit
-                          : benefit.description ?? benefit.title ?? ""}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+          {/* PRICING TABLE ONLY — CREDIT SYSTEM BOX REMOVED */}
+          <Pricing />
         </div>
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section className="py-20 bg-muted/30">
+      <section className="bg-muted/30 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4">
+          <div className="mb-16 text-center">
+            <Badge className="mb-4 border-emerald-700/30 bg-emerald-900/30 px-4 py-1 text-sm font-medium text-emerald-400">
               Success Stories
             </Badge>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               What Our Users Say
             </h2>
 
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Hear from patients and doctors who use our platform.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
+                className="border-emerald-900/20 transition-all duration-300 hover:border-emerald-800/40"
               >
                 <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center mr-4">
-                      <span className="text-emerald-400 font-bold">
+                  <div className="mb-4 flex items-center">
+                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-900/20">
+                      <span className="font-bold text-emerald-400">
                         {testimonial.initials}
                       </span>
                     </div>
@@ -231,35 +199,32 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* MEDISENSE SECTION - AT THE BOTTOM */}
+      {/* MEDISENSE SECTION — AT THE VERY BOTTOM */}
       <MediSenseSection />
 
       {/* CTA SECTION */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/20">
-            <CardContent className="pt-8 md:p-12 lg:p-16 relative overflow-hidden">
+          <Card className="border-emerald-800/20 bg-gradient-to-r from-emerald-900/30 to-emerald-950/20">
+            <CardContent className="relative overflow-hidden pt-8 md:p-12 lg:p-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
                   Ready to take control of your healthcare?
                 </h2>
 
-                <p className="text-lg text-muted-foreground mb-8">
+                <p className="mb-8 text-lg text-muted-foreground">
                   Join thousands of users who have simplified their healthcare
                   journey with our platform. Get started today and experience
                   healthcare the way it should be.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Button
                     size="lg"
                     className="bg-emerald-600 text-white hover:bg-emerald-700"
                     asChild
                   >
-                    <Link href="/sign-up">
-                      Sign Up Now
-                    </Link>
+                    <Link href="/sign-up">Sign Up Now</Link>
                   </Button>
 
                   <Button
@@ -268,9 +233,7 @@ export default function Home() {
                     asChild
                     variant="outline"
                   >
-                    <Link href="/pricing">
-                      View Pricing
-                    </Link>
+                    <Link href="/pricing">View Pricing</Link>
                   </Button>
                 </div>
               </div>
