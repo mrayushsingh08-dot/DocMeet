@@ -1,8 +1,12 @@
+
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 import {
   Card,
   CardHeader,
@@ -18,15 +22,12 @@ import MediSenseSection from "@/components/MediSenseSection";
 export default function Home() {
   return (
     <div className="bg-background">
-
       {/* HERO SECTION */}
       <section className="relative overflow-hidden py-30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             {/* LEFT SIDE */}
             <div className="space-y-8">
-
               <Badge
                 variant="outline"
                 className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400"
@@ -48,7 +49,6 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-
                 <Button
                   asChild
                   size="lg"
@@ -70,7 +70,6 @@ export default function Home() {
                     Find Doctors
                   </Link>
                 </Button>
-
               </div>
             </div>
 
@@ -84,7 +83,6 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-
           </div>
         </div>
       </section>
@@ -92,7 +90,6 @@ export default function Home() {
       {/* HOW IT WORKS SECTION */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               How It Works
@@ -104,14 +101,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
             {features.map((feature, index) => (
               <Card
                 key={index}
                 className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
               >
                 <CardHeader className="pb-2">
-
                   <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
                     {feature.icon}
                   </div>
@@ -119,7 +114,6 @@ export default function Home() {
                   <CardTitle className="text-xl font-semibold text-white">
                     {feature.title}
                   </CardTitle>
-
                 </CardHeader>
 
                 <CardContent>
@@ -129,7 +123,6 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
-
           </div>
         </div>
       </section>
@@ -137,12 +130,8 @@ export default function Home() {
       {/* PRICING SECTION */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-
           <div className="text-center mb-16">
-
-            <Badge
-              className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400"
-            >
+            <Badge className="w-fit rounded-md px-4 py-2 text-sm font-medium bg-emerald-900/30 border-emerald-700/30 text-emerald-400">
               Affordable Healthcare
             </Badge>
 
@@ -156,13 +145,11 @@ export default function Home() {
           </div>
 
           <div>
-
             {/* PRICING TABLE */}
             <Pricing />
 
             {/* CREDIT SYSTEM */}
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
-
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
                   <Stethoscope className="h-5 w-5 mr-2 text-emerald-400" />
@@ -172,47 +159,31 @@ export default function Home() {
 
               <CardContent>
                 <ul className="space-y-3">
+                  {creditBenefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="mr-3 mt-1 bg-emerald-900/20 p-1 rounded-full">
+                        <Check className="h-4 w-4 text-emerald-400" />
+                      </div>
 
-                  {creditBenefits.map((benefit, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="flex items-start"
-                      >
-
-                        <div className="mr-3 mt-1 bg-emerald-900/20 p-1 rounded-full">
-                          <Check className="h-4 w-4 text-emerald-400" />
-                        </div>
-
-                        <p
-                          className="text-muted-foreground"
-                          dangerouslySetInnerHTML={{ __html: benefit }}
-                        />
-
-                      </li>
-                    );
-                  })}
-
+                      <p className="text-muted-foreground">
+                        {typeof benefit === "string"
+                          ? benefit
+                          : benefit.description ?? benefit.title ?? ""}
+                      </p>
+                    </li>
+                  ))}
                 </ul>
               </CardContent>
-
             </Card>
           </div>
         </div>
       </section>
 
-          {/* MEDISENSE SECTION */}
-                  <MediSenseSection />
-
       {/* TESTIMONIALS SECTION */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-
           <div className="text-center mb-16">
-
-            <Badge
-              className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
-            >
+            <Badge className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4">
               Success Stories
             </Badge>
 
@@ -226,23 +197,17 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
                 className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
               >
-
                 <CardContent className="pt-6">
-
                   <div className="flex items-center mb-4">
-
                     <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center mr-4">
-
                       <span className="text-emerald-400 font-bold">
                         {testimonial.initials}
                       </span>
-
                     </div>
 
                     <div>
@@ -254,32 +219,28 @@ export default function Home() {
                         {testimonial.role}
                       </p>
                     </div>
-
                   </div>
 
                   <p className="text-muted-foreground">
                     &quot;{testimonial.quote}&quot;
                   </p>
-
                 </CardContent>
-
               </Card>
             ))}
-
           </div>
         </div>
       </section>
 
+
+      {/* MEDISENSE SECTION - AT THE BOTTOM */}
+      <MediSenseSection />
+
       {/* CTA SECTION */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-
           <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/20">
-
             <CardContent className="pt-8 md:p-12 lg:p-16 relative overflow-hidden">
-
               <div>
-
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Ready to take control of your healthcare?
                 </h2>
@@ -291,7 +252,6 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-
                   <Button
                     size="lg"
                     className="bg-emerald-600 text-white hover:bg-emerald-700"
@@ -312,14 +272,10 @@ export default function Home() {
                       View Pricing
                     </Link>
                   </Button>
-
                 </div>
               </div>
-
             </CardContent>
-
           </Card>
-
         </div>
       </section>
 
